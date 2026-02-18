@@ -8,7 +8,12 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #000;
+            /* Background Image with Overlay for Dark Effect */
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1614850523296-e8c041df23a8?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #fff;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -19,6 +24,7 @@
             max-width: 500px;
             margin: auto;
             padding: 20px;
+            backdrop-filter: blur(5px); /* Halki glass finish */
         }
 
         /* Floating Logo */
@@ -26,15 +32,15 @@
             width: 140px;
             border-radius: 20px;
             margin-bottom: 10px;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
-            animation: float 4s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            animation: floatLogo 4s ease-in-out infinite;
         }
 
         h1 {
             font-size: 28px;
             color: #FFD700; 
             margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 2px 2px 4px #000;
         }
 
         .sub-heading {
@@ -42,7 +48,7 @@
             color: #00FF00;
             font-weight: bold;
             margin-bottom: 25px;
-            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 10px #000;
         }
 
         /* Animated Color Circles */
@@ -63,23 +69,22 @@
             font-weight: bold;
             font-size: 11px;
             color: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+            animation: floatCircles 3s ease-in-out infinite;
         }
 
-        .red { background: linear-gradient(145deg, #ff0000, #990000); animation-delay: 0s; }
-        .green { background: linear-gradient(145deg, #00ff00, #006600); animation-delay: 0.5s; }
-        .violet { background: linear-gradient(145deg, #8A2BE2, #4B0082); animation-delay: 1s; }
+        .red { background: radial-gradient(circle, #ff4d4d, #990000); animation-delay: 0s; }
+        .green { background: radial-gradient(circle, #4dff4d, #006600); animation-delay: 0.5s; }
+        .violet { background: radial-gradient(circle, #b366ff, #4B0082); animation-delay: 1s; }
 
-        /* Floating Animation Logic */
-        @keyframes float {
+        @keyframes floatCircles {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
         }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #00FF00; }
-            to { text-shadow: 0 0 20px #00FF00, 0 0 30px #00FF00; }
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
 
         /* Pulsing Telegram Button */
@@ -97,14 +102,13 @@
             border-radius: 50px;
             display: inline-block;
             box-shadow: 0 0 25px rgba(0, 255, 0, 0.6);
-            transition: 0.3s;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 255, 0, 0.8); }
-            100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .btn-subtext {
@@ -115,31 +119,28 @@
             font-weight: bold;
         }
 
-        /* Proof Screenshot with Glow */
         .proof-img {
             width: 100%;
             border: 1px solid #444;
             border-radius: 15px;
             margin: 25px 0;
-            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
         }
 
-        /* Features List */
         .features {
             text-align: left;
             font-size: 14px;
             line-height: 2;
-            margin-top: 25px;
-            background: #111;
+            background: rgba(0, 0, 0, 0.6); /* Transparent Dark */
             padding: 15px;
             border-radius: 12px;
-            border-left: 5px solid #00FF00;
+            border: 1px solid #333;
         }
 
         footer {
             margin-top: 40px;
             font-size: 11px;
-            color: #666;
+            color: #aaa;
             padding-bottom: 20px;
         }
     </style>
@@ -147,7 +148,7 @@
 <body>
 
 <div class="container">
-    <img src="https://d1yei2z3i6k35z.cloudfront.net/14081496/68ab28268a348_logo.jpg" alt="Altron Logo" class="logo-img">
+    <img src="https://d1yei2z3i6k35z.cloudfront.net/14081496/68ab28268a348_logo.jpg" class="logo-img">
     
     <h1>Earn With Altron</h1>
     <p class="sub-heading">⚡ अभी जुड़ें और रोज़ मोबाइल से कमाएं ₹500 - ₹5000 गारंटी!</p>
@@ -158,18 +159,14 @@
         <div class="circle violet">VIOLET</div>
     </div>
 
-    <p style="color: #00FF00; font-weight: bold;">💧 आज ही जुड़ें - रोज़ाना फ्री कलर प्रीडिक्शन + नया जैकपॉट!</p>
+    <p style="color: #00FF00; font-weight: bold; text-shadow: 1px 1px 2px #000;">💧 आज ही जुड़ें - रोज़ाना फ्री कलर प्रीडिक्शन + नया जैकपॉट!</p>
 
     <div class="btn-container">
-        <a href="https://t.me/detorlab" target="_blank" class="tg-button">
-            अभी फ्री टेलीग्राम चैनल जॉइन करें
-        </a>
+        <a href="https://t.me/detorlab" target="_blank" class="tg-button">अभी फ्री टेलीग्राम चैनल जॉइन करें</a>
         <span class="btn-subtext">💎 Free Joining</span>
     </div>
 
-    <p style="font-size: 15px;">🏆 100% फ्री सिग्नल, रोज़ का मुनाफ़ा सीधे आपके पास!</p>
-
-    <img src="https://d1yei2z3i6k35z.cloudfront.net/14081496/68a4254922c17_Raja.png" alt="Earning Proof" class="proof-img">
+    <img src="https://d1yei2z3i6k35z.cloudfront.net/14081496/68a4254922c17_Raja.png" class="proof-img">
 
     <div class="features">
         🔥 24 Hour Gift Code Distribution Channel Free!<br>
@@ -183,5 +180,5 @@
 </div>
 
 </body>
-    </html>
-    
+        </html>
+        
