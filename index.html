@@ -1,224 +1,234 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn With Altron</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            /* Same Luffy Background with Blur */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://modern-blue-tftks5ikjv.edgeone.app/small-cartoon-version-of-luffy.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            color: #fff;
-            font-family: 'Poppins', sans-serif; /* Same Font Style */
-            text-align: center;
-            min-height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earn With Altron</title>
 
-        .container {
-            max-width: 480px;
-            margin: auto;
-            padding: 20px;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
 
-        /* Profile/Logo Image */
-        .logo-img {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border: 3px solid #333;
-            margin-bottom: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
+body{
+background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url('https://images.unsplash.com/photo-1605902711622-cfb43c4437b5');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+text-align:center;
+min-height:100vh;
+}
 
-        /* Sub Heading Style */
-        .sub-heading {
-            font-size: 22px;
-            color: #FFEB3B; /* Yellow like Raja site */
-            font-weight: 900;
-            margin-bottom: 25px;
-            line-height: 1.3;
-            text-shadow: 2px 2px 4px #000;
-        }
+.container{
+max-width:480px;
+margin:auto;
+padding:20px;
+}
 
-        /* Betting Circles Logic */
-        .circles {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 25px 0;
-        }
-        
-        .circle {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 15px;
-            color: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-            animation: bounce 3s ease-in-out infinite;
-        }
+/* LOGO */
+.logo{
+width:150px;
+height:150px;
+border-radius:12px;
+object-fit:cover;
+margin-bottom:15px;
+border:2px solid rgba(255,255,255,0.3);
+}
 
-        .red { background: radial-gradient(circle, #ff5f6d, #ff1212); animation-delay: 0s; }
-        .green { background: radial-gradient(circle, #42e695, #3bb2b8); animation-delay: 0.5s; }
-        .violet { background: radial-gradient(circle, #a445b2, #d41872); animation-delay: 1s; }
+/* HEADING */
+.main-heading{
+color:#FFD700;
+font-size:22px;
+font-weight:bold;
+line-height:1.4;
+margin-bottom:20px;
+}
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
+/* COLOR CIRCLES */
+.circles{
+display:flex;
+justify-content:center;
+gap:15px;
+margin:20px 0;
+}
 
-        /* Yellow Alert Text */
-        .alert-text {
-            color: #FFEB3B;
-            font-weight: bold;
-            font-size: 18px;
-            margin: 15px 0;
-            text-shadow: 1px 1px 2px #000;
-        }
+.circle{
+width:75px;
+height:75px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+font-size:14px;
+color:white;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+animation:float 3s ease-in-out infinite;
+}
 
-        /* Green Prediction Text */
-        .prediction-text {
-            color: #00FF00;
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px #000;
-        }
+.red{background:#E63946;animation-delay:0s;}
+.green{background:#2D6A4F;animation-delay:0.5s;}
+.violet{background:#7B2CBF;animation-delay:1s;}
 
-        /* THE GLOSSY NEON BUTTON (SAME AS SCREENSHOT) */
-        .btn-container {
-            margin: 35px 0;
-        }
-        
-        .tg-button {
-            position: relative;
-            background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%);
-            color: #ffffff !important;
-            padding: 22px 10px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 900;
-            border-radius: 15px;
-            display: block;
-            border-bottom: 5px solid #1e8449;
-            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.5);
-            overflow: hidden;
-            transition: 0.3s;
-        }
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
 
-        /* Shine Animation */
-        .tg-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
-            transform: skewX(-45deg);
-            animation: shine 2.5s infinite;
-        }
+/* TEXT */
+.yellow-text{
+color:#FFD700;
+font-weight:bold;
+font-size:17px;
+margin-top:15px;
+}
 
-        @keyframes shine {
-            0% { left: -150%; }
-            100% { left: 200%; }
-        }
+.green-text{
+color:#00FF88;
+font-weight:bold;
+font-size:17px;
+margin-top:10px;
+}
 
-        .btn-subtext {
-            display: block;
-            font-size: 16px;
-            margin-top: 5px;
-            font-weight: 400;
-        }
+/* TELEGRAM BUTTON */
+.tg-btn{
+margin-top:30px;
+display:block;
+text-decoration:none;
+color:white;
+background:linear-gradient(180deg,#34d399,#059669);
+padding:20px;
+border-radius:20px;
+font-size:18px;
+font-weight:bold;
+position:relative;
+overflow:hidden;
+box-shadow:0 0 25px rgba(16,185,129,0.6);
+transition:0.3s;
+}
 
-        /* Features Box - Semi Transparent Glass Look */
-        .features-box {
-            text-align: left;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+.tg-btn span{
+display:block;
+font-size:14px;
+margin-top:5px;
+opacity:0.9;
+}
 
-        .features-box h3 {
-            margin-top: 0;
-            color: #FFEB3B;
-            font-size: 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
+/* Shine Effect */
+.tg-btn::after{
+content:'';
+position:absolute;
+top:0;
+left:-150%;
+width:50%;
+height:100%;
+background:linear-gradient(to right,transparent,rgba(255,255,255,0.7),transparent);
+transform:skewX(-45deg);
+animation:shine 3s infinite;
+}
 
-        .feature-item {
-            margin: 15px 0;
-            display: flex;
-            align-items: flex-start;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
+@keyframes shine{
+0%{left:-150%;}
+100%{left:200%;}
+}
 
-        .feature-item span { margin-right: 15px; }
+/* FEATURES BOX */
+.features{
+margin-top:35px;
+background:white;
+color:black;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+text-align:left;
+}
 
-        footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: #888;
-            padding-bottom: 30px;
-        }
-    </style>
+.features h3{
+margin-bottom:15px;
+}
+
+.feature{
+margin:8px 0;
+font-size:14px;
+font-weight:bold;
+}
+
+/* PROOF SECTION */
+.proof{
+margin-top:30px;
+}
+
+.proof img{
+width:100%;
+border-radius:10px;
+margin-top:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+footer{
+margin-top:30px;
+font-size:12px;
+color:#ccc;
+padding-bottom:20px;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    <img src="https://d1yei2z3i6k35z.cloudfront.net/14081496/68ab28268a348_logo.jpg" class="logo-img">
-    
-    <p class="sub-heading">⚡ अभी जुड़ें और रोज़ मोबाइल से कमाएं ₹500 - ₹5000 गारंटी!</p>
 
-    <div class="circles">
-        <div class="circle red">RED</div>
-        <div class="circle green">GREEN</div>
-        <div class="circle violet">VIOLET</div>
-    </div>
+<img src="https://d1yei2z3i6k35z.cloudfront.net/14081496/68ab28268a348_logo.jpg" class="logo">
 
-    <p class="alert-text">⚡ 100% फ्री सिग्नल, 100% पक्का जैकपॉट, रोज़ाना कमाई करें!</p>
-    
-    <p class="prediction-text">💧 आज ही जुड़ें - रोज़ाना फ्री कलर प्रीडिक्शन + नया जैकपॉट!</p>
+<div class="main-heading">
+⚡ अभी जुड़ें और रोज़ मोबाइल से कमाएं ₹500 - ₹5000 गारंटी!
+</div>
 
-    <div class="btn-container">
-        <a href="https://t.me/detorlab" target="_blank" class="tg-button">
-            अभी फ्री टेलीग्राम चैनल जॉइन करें
-            <span class="btn-subtext">💎 Free Joining</span>
-        </a>
-    </div>
+<div class="circles">
+<div class="circle red">RED</div>
+<div class="circle green">GREEN</div>
+<div class="circle violet">VIOLET</div>
+</div>
 
-    <div class="features-box">
-        <h3>⚡ Features</h3>
-        <div class="feature-item"><span>1.</span> 24 Hour Gift Code Distribution Channel Free!</div>
-        <div class="feature-item"><span>2.</span> हर मिनट नया राउंड – तुरंत रिज़ल्ट, तुरंत जीत।</div>
-        <div class="feature-item"><span>3.</span> घर बैठे रियल कैश कमाने का मौका।</div>
-        <div class="feature-item"><span>4.</span> मोबाइल-फ्रेंडली – कहीं भी, कभी भी खेलें।</div>
-        <div class="feature-item"><span>5.</span> सीधा टेलीग्राम चैनल से गाइडेंस।</div>
-    </div>
+<div class="yellow-text">
+⚡ 100% फ्री सिग्नल, 100% पक्का जैकपॉट, रोज़ाना कमाई करें!
+</div>
 
-    <footer>© 2026 Earn With Altron. Powered by Altron Systems</footer>
+<div class="green-text">
+💧 आज ही जुड़ें – रोज़ाना फ्री कलर प्रीडिक्शन + नया जैकपॉट!
+</div>
+
+<a href="https://t.me/detorlab" target="_blank" class="tg-btn">
+अभी फ्री टेलीग्राम चैनल जॉइन करें
+<span>💎 Free Joining</span>
+</a>
+
+<div class="features">
+<h3>Features</h3>
+<div class="feature">🔥 24 Hour Gift Code Distribution Channel Free</div>
+<div class="feature">🔥 हर मिनट नया राउंड – तुरंत रिज़ल्ट</div>
+<div class="feature">🔥 घर बैठे रियल कैश कमाने का मौका</div>
+<div class="feature">🔥 मोबाइल-फ्रेंडली – कहीं भी, कभी भी</div>
+<div class="feature">🔥 सीधा टेलीग्राम चैनल से गाइडेंस</div>
+</div>
+
+<div class="proof">
+<img src="https://via.placeholder.com/400x300?text=Withdraw+Proof">
+<img src="https://via.placeholder.com/400x300?text=Winning+Proof">
+</div>
+
+<footer>
+© 2026 Earn With Altron | Powered by Systeme.io
+</footer>
+
 </div>
 
 </body>
-    </html>
-    
+</html>
